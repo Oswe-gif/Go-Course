@@ -55,7 +55,7 @@ func main(){
 	var matrix2 [3][3]int= [3][3]int{{1,2,3},{2,3,4},{1,2,3}}
 	fmt.Println(matrix2)
 
-	// just a copy value
+	// just copy the value
 	copiedValue := matrix;
 	copiedValue[0][0] = 1
 	fmt.Println(copiedValue)
