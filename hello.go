@@ -83,8 +83,8 @@ func main(){
 	//range
 
 	for i,v := range "Hello world!"{
-		fmt.Println("index: ",i, " value: ",v)
-		fmt.Printf("index: %d, value %c \n",i,v)
+		fmt.Println("index: ",i, " Rune: ",v)
+		fmt.Printf("index: %d, Rune %c \n",i,v)
 	}
 
 	//for _,v := range "Hello world!"{
@@ -107,7 +107,7 @@ func main(){
 	secondSlice[0]=-100
 	fmt.Println(number)
 
-	//but if I change the size the pointer changes too, because does not match array's elements
+	//but if I change the size, the pointer changes too, because does not match array's elements
 	// if we want to keep the pointer, we have to ensure that array's size and slice's size match
 
 	secondSlice = append(secondSlice, 3)
