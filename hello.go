@@ -66,5 +66,52 @@ func main(){
 	(*addressMatrix)[0][0] = -1
 	fmt.Println(matrix2)
 
+
+	//map
+
+	var myMap map[string]int
+	fmt.Println(myMap)
+
+	myMap = map[string]int{}
+	myMap["key1"]=1
+	fmt.Println(myMap)
+
+	m := make(map[string]int) 
+
+	fmt.Println(m)
+
+	//range
+
+	for i,v := range "Hello world!"{
+		fmt.Println("index: ",i, " value: ",v)
+		fmt.Printf("index: %d, value %c \n",i,v)
+	}
+
+	//for _,v := range "Hello world!"{
+	//	fmt.Println(" value: ",v)
+	//}
+
+	//slices
+
+	slice := make([]int, 3)
+	fmt.Println(slice)
+	fmt.Println(slice == nil)
+	var s []int           // declarado pero no inicializado
+	fmt.Println(s == nil)
+	slice = append(slice, 1)
+	fmt.Println(slice)
+
+	//it was modified the real array using slice
+	fmt.Println(number)
+	secondSlice := number[0:3]
+	secondSlice[0]=-100
+	fmt.Println(number)
+
+	//but if I change the size the pointer changes too, because does not match array's elements
+
+	secondSlice = append(secondSlice, 3)
+	secondSlice[0]=100
+	fmt.Print(number)
+
 }
 
