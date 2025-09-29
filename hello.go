@@ -108,10 +108,15 @@ func main(){
 	fmt.Println(number)
 
 	//but if I change the size the pointer changes too, because does not match array's elements
+	// if we want to keep the pointer, we have to ensure that array's size and slice's size match
 
 	secondSlice = append(secondSlice, 3)
 	secondSlice[0]=100
-	fmt.Print(number)
+	fmt.Println(number)
+
+	secondSlice = append(secondSlice, 3)
+	secondSlice[0]=-2200
+	fmt.Println(number)
 
 }
 
