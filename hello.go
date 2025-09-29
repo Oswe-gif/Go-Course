@@ -142,6 +142,9 @@ func main(){
 	if error == nil {
 		fmt.Println(result)
 	}
+
+	fmt.Println(generalFunction(3,4))
+	fmt.Println(generalFunctionX2(3,4))
 }
 
 func add(a,b int)int{
@@ -168,6 +171,18 @@ func compare(a,b int)(string, error){
 	}else{
 		return "", errors.New("man, they are equals")
 	}
+}
+
+//a new way
+func generalFunction(a,b int)(x,y int){
+	result1 := a+b
+	result2 := a-b
+	return result1, result2
+}
+func generalFunctionX2(a,b int)(x,y int){
+	x = a+b
+	y = a-b
+	return
 }
 
 
