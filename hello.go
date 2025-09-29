@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -118,5 +119,55 @@ func main(){
 	secondSlice[0]=-2200
 	fmt.Println(number)
 
+	//anonymous function
+	func ()  {
+		fmt.Println("calling")
+	}()
+
+	greet := func ()  {
+		fmt.Println("calling")
+	}
+	greet()
+	//general functions
+	operation := add
+	fmt.Println(operation(1,2))
+
+	fmt.Println(applyOperation(2,2,add))
+
+	functionInsideOfFunction := createMultiplier(3)
+	fmt.Println(functionInsideOfFunction(2))
+	fmt.Println(createMultiplier(2)(2))
+
+	result, error := compare(1,2)
+	if error == nil {
+		fmt.Println(result)
+	}
 }
+
+func add(a,b int)int{
+	return a+b
+}
+
+// a function that takes a function as an argument
+func applyOperation(a int, b int, operation func(int, int)(int))int{
+	return operation(a,b)
+}
+
+//function that returns a function
+func createMultiplier(factor int) func(int) int {
+	return func(i int) int {
+		return i * factor
+	}
+}
+
+func compare(a,b int)(string, error){
+	if a > b {
+		return "a is greater than b", nil
+	}else if b > a{
+		return "b is greater than a", nil
+	}else{
+		return "", errors.New("man, they are equals")
+	}
+}
+
 
