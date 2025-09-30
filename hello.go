@@ -145,6 +145,9 @@ func main(){
 
 	fmt.Println(generalFunction(3,4))
 	fmt.Println(generalFunctionX2(3,4))
+
+	//ellipsis func
+
 	fmt.Println(sum("sum",1,2,3))
 }
 
@@ -186,6 +189,7 @@ func generalFunctionX2(a,b int)(x,y int){
 	return
 }
 
+//ellipsis func
 func sum(returnString string, nums ...int)(string, int){
 	total := 0
 	for _, v := range nums{
