@@ -145,6 +145,7 @@ func main(){
 
 	fmt.Println(generalFunction(3,4))
 	fmt.Println(generalFunctionX2(3,4))
+	fmt.Println(sum("sum",1,2,3))
 }
 
 func add(a,b int)int{
@@ -183,6 +184,14 @@ func generalFunctionX2(a,b int)(x,y int){
 	x = a+b
 	y = a-b
 	return
+}
+
+func sum(returnString string, nums ...int)(string, int){
+	total := 0
+	for _, v := range nums{
+		total += v
+	}
+	return returnString,total
 }
 
 
