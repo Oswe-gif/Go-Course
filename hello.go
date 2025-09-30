@@ -146,9 +146,10 @@ func main(){
 	fmt.Println(generalFunction(3,4))
 	fmt.Println(generalFunctionX2(3,4))
 
-	//ellipsis func
-
+	//ellipsis (...) || Variadic func
 	fmt.Println(sum("sum",1,2,3))
+
+	process(10)
 }
 
 func add(a,b int)int{
@@ -189,13 +190,22 @@ func generalFunctionX2(a,b int)(x,y int){
 	return
 }
 
-//ellipsis func
+//ellipsis (...) || Variadic func
 func sum(returnString string, nums ...int)(string, int){
 	total := 0
 	for _, v := range nums{
 		total += v
 	}
 	return returnString,total
+}
+
+func process(i int){
+	// the defer keyword makes to run the function at the end, but taking the variables passed in the first moment and not to the end
+	defer fmt.Println("First process",i)
+	defer fmt.Println("second process")
+	i++
+	fmt.Println("Normal flow")
+	fmt.Println("i value: ",i)
 }
 
 
