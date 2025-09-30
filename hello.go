@@ -150,6 +150,10 @@ func main(){
 	fmt.Println(sum("sum",1,2,3))
 
 	process(10)
+
+	//panic
+	runPanic(10)
+	runPanic(-2)
 }
 
 func add(a,b int)int{
@@ -208,4 +212,14 @@ func process(i int){
 	fmt.Println("i value: ",i)
 }
 
+func runPanic(input int){
+	// the defer and panic functions work together. Panic is going to show a error, but it only shows when defer functions are execeted
+	defer fmt.Println("Deferred 1")
+	defer fmt.Println("Deferred 2")
+	if input<0 {
+		fmt.Println("Before panic")
+		panic("Input must be a non-negative number")
+	}
+	fmt.Println("Processing input ",input)
+}
 
