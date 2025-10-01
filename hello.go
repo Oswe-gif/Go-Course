@@ -153,8 +153,11 @@ func main(){
 
 	//panic
 	runPanic(10)
-	runPanic(-2)
+	//runPanic(-2)
+	newProcess()
+	fmt.Println("End")
 }
+
 
 func add(a,b int)int{
 	return a+b
@@ -223,3 +226,18 @@ func runPanic(input int){
 	fmt.Println("Processing input ",input)
 }
 
+//recover --> we handle the error y the main flow continues
+func newProcess(){
+	defer func ()  {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered: ",r)
+		}
+	}()
+
+	fmt.Println("Start process")
+	panic("something went wrong")
+	fmt.Println("End new Process")
+
+
+	// This strategy of using panic and recovery functions should be used only when there is an error that we can handle, but it is a better and healthier idea to use the normal error (which we see above)
+}
