@@ -240,4 +240,5 @@ func newProcess(){
 
 
 	// This strategy of using panic and recovery functions should be used only when there is an error that we can handle, but it is a better and healthier idea to use the normal error (which we see above)
+	// try and avoid panic and recover for simple situations. We should use error and compare whether it is different from null or not.
 }
