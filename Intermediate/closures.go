@@ -1,4 +1,4 @@
-package main
+package Intermediate
 
 import "fmt"
 
@@ -32,3 +32,4 @@ func adder() func() int {
 		return i
 	}
 }
+
